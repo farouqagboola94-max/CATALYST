@@ -46,10 +46,7 @@ def get_whats_next(category="ALL"):
     else:
         return "Unknown context. Available: story, west_wing, process, philosophy, joke, ALL"
 
-@app.route('/trigger-ritual')
-def trigger_ritual():
-    morning_ritual()
-    return "Ritual executed manually."
+
 
 # -------- TELEGRAM --------
 # ---------- TELEGRAM ----------
@@ -182,3 +179,8 @@ if __name__ == "__main__":
     t.start()
     # For local: app.run(host="0.0.0.0", port=5000)
     # On Render, gunicorn handles this.
+
+@app.route('/trigger-ritual')
+def trigger_ritual():
+    morning_ritual()
+    return "Ritual executed manually."
