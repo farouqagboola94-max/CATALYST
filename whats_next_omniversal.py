@@ -46,7 +46,12 @@ def get_whats_next(category="ALL"):
     else:
         return "Unknown context. Available: story, west_wing, process, philosophy, joke, ALL"
 
+@app.route('/trigger-ritual')
+def trigger_ritual():
+    morning_ritual()
+    return "Ritual executed manually."
 
+# -------- TELEGRAM --------
 # ---------- TELEGRAM ----------
 def send_telegram(text):
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
